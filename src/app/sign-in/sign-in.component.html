@@ -1,0 +1,29 @@
+<div class="row" @fadeInOut>
+    <div class="auth-box">
+        <h2>{{ isLoginMode ? 'Welcome Back' : 'Create Account' }}</h2>
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+            <div class="form-group" *ngIf="!isLoginMode" @fadeInOut>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" class="form-control" ngModel name="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" ngModel name="email" required email
+                    placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" ngModel name="password" required minlength="6"
+                    placeholder="Min. 6 characters">
+            </div>
+            <div class="actions">
+                <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">
+                    {{ isLoginMode ? 'Login' : 'Sign Up' }}
+                </button>
+                <button class="btn btn-link" type="button" (click)="onSwitchMode()">
+                    {{ isLoginMode ? 'New here? Create an account' : 'Already have an account? Login' }}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

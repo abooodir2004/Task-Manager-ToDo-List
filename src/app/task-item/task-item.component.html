@@ -1,0 +1,18 @@
+<div class="task-item" [class.completed]="task.completed">
+  <div class="task-content">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <div class="task-meta">
+      <span>Due: {{ task.dueDate | date:'mediumDate' }}</span>
+      <span [class.completed]="task.completed">
+        {{ task.completed ? 'Completed' : 'Pending' }}
+      </span>
+    </div>
+  </div>
+  <div class="task-actions">
+    <button (click)="onToggle()" class="toggle-btn">
+      {{ task.completed ? 'Undo' : 'Complete' }}
+    </button>
+    <button (click)="onDelete()" class="delete-btn">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.auth-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2rem;
+}
+
+input.ng-invalid.ng-touched {
+    border-color: #ff6b6b;
+    background-color: #fff5f5;
+}
+
+.actions {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+.btn-link {
+    background: none;
+    color: #764ba2;
+    padding: 0;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.btn-link:hover {
+    background: none;
+    color: #667eea;
+}
